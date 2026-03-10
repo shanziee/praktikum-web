@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Praktikum CSS Modul 4</title>
+
+    <!-- External Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="myStyleSheet.css">
+
+    <!-- Internal Style Sheet -->
+    <style>
+        body{
+            background-color: HSL(20%, 40%, 70%);
+            color: orange;
+        }
+
+        h1{
+            color: maroon;
+            margin-left: 40px;
+            text-align: center;
+        }
+
+        h2{
+            text-align: left;
+        }
+
+        h3{
+            text-align: right;
+        }
+
+        /* Selector dengan Elemen HTML */
+        p{
+            text-align: center;
+            color: red;
+        }
+
+        /* Selector dengan ID */
+        #para1{
+            text-align: center;
+            color: red;
+        }
+
+        /* Selector dengan Class */
+        p.center{
+            text-align: center;
+            color: red;
+        }
+
+        /* Font Properties */
+        p.example{
+            font-family: Arial;
+            font-size: 20px;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        /* List Properties */
+        ul.listsatu{
+            background-color: tomato;
+            margin: 10px 5px 10px 5px;
+            list-style-type: lower-alpha;
+            list-style-position: inside;
+        }
+
+        ol.listdua{
+            background-color: lightblue;
+            list-style-type: lower-roman;
+            padding: 5px 5px 15px 15px;
+            list-style-position: inside;
+        }
+
+        /* Colors */
+        #teks{
+            color: #2F3CDF;
+        }
+
+        input.text-field{
+            background-color: RGBA(32,55,122,0.5);
+        }
+
+        /* Span & Div */
+        .section1{
+            background-color: lightgrey;
+            padding: 10px 5px 10px 5px;
+        }
+
+        .mark{
+            background-color: tomato;
+            font-style: italic;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- Inline Style -->
+<h1 style="color:lightblue; font-size:30px;">
+    Praktikum Web Programming
+</h1>
+
+<h2>Contoh Selector</h2>
+<p>Ini paragraf biasa</p>
+<p id="para1">Ini paragraf dengan ID</p>
+<p class="center">Ini paragraf dengan Class</p>
+
+<h2>Contoh Font Properties</h2>
+<p class="example">Ini contoh penggunaan font properties</p>
+
+<h3>List of Property</h3>
+<ol type="1">
+    <li>Indoor
+        <ul type="circle">
+            <li>Sofa</li>
+        </ul>
+        <ul type="disc">
+            <li>Tanaman Hias</li>
+        </ul>
+        <ul type="square">
+            <li>Lampu Baca</li>
+        </ul>
+        <ul type="none">
+            <li>Rak Buku</li>
+        </ul>
+    </li>
+
+    <li>Outdoor
+        <ol type="A">
+            <li>Payung Pantai</li>
+        </ol>
+        <ol type="a">
+            <li>Ayunan</li>
+        </ol>
+        <ol type="I">
+            <li>Kursi Taman</li>
+        </ol>
+        <ol type="i">
+            <li>Lampu Taman</li>
+        </ol>
+    </li>
+</ol>
+
+<h2 id="teks">Contoh Color CSS</h2>
+
+<input type="text" class="text-field" placeholder="Input text">
+
+<br><br>
+
+<!-- Span & Div -->
+<div class="section1">
+    <p>Content of <span class="mark">Property</span></p>
+</div>
+
+</body>
+</html>
