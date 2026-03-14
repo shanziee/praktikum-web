@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulir Pendaftaran Praktikan</title>
+
+    <style>
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container{
+            width: 400px;
+            margin: 80px auto;
+            background: rgba(255,255,255,0.9);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+        }
+
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label{
+            font-weight: bold;
+        }
+
+        input, select, textarea{
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .radio-group,
+        .checkbox-group{
+            margin-bottom: 10px;
+        }
+
+        button{
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit{
+            background-color: #28a745;
+            color: white;
+        }
+
+        .cancel{
+            background-color: #dc3545;
+            color: white;
+        }
+
+        button:hover{
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Formulir Pendaftaran Praktikan</h2>
+
+<form>
+
+<label>Nama</label>
+<input type="text" value="Muhamad Ihsan">
+
+<label>NIM</label>
+<input type="text" value="2311102077">
+
+<label>Username</label>
+<input type="text" placeholder="Masukkan username">
+
+<label>Password</label>
+<input type="password" placeholder="Masukkan password">
+
+<label>Email</label>
+<input type="email" placeholder="Masukkan email">
+
+<label>Jenis Kelamin</label>
+<div class="radio-group">
+<input type="radio" name="jk"> Pria
+<input type="radio" name="jk"> Wanita
+</div>
+
+<label>Hobi</label>
+<div class="checkbox-group">
+<input type="checkbox"> Renang
+<input type="checkbox"> Bersepeda
+<input type="checkbox"> Memancing
+</div>
+
+<label>Jenjang Pendidikan</label>
+<select>
+<option>SMA</option>
+<option>D3</option>
+<option>S1</option>
+<option>S2</option>
+<option>S3</option>
+</select>
+
+<label>Kritik dan Saran</label>
+<textarea rows="4"></textarea>
+
+<br>
+
+<button type="reset" class="cancel">Cancel</button>
+<button type="submit" class="submit">Submit</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
