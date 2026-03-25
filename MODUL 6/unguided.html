@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sambut Ramadan - Berkah THR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Definisi Variabel Warna agar mudah diubah */
+        :root {
+            --bg-color: #f8f9fa; /* Abu-abu sangat muda/hampir putih */
+            --card-color: #ffffff; /* Putih bersih */
+            --primary-yellow: #ffc107; /* Kuning Bootstrap (Warning) - Cerah */
+            --dark-gold: #b59410; /* Emas agak tua untuk teks agar terbaca */
+            --text-dark: #333333;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        /* Container Utama */
+        .ramadan-container {
+            text-align: center;
+            padding: 3.5rem 2rem;
+            background-color: var(--card-color);
+            border-radius: 25px;
+            /* Border kuning tipis */
+            border: 2px solid rgba(255, 193, 7, 0.2); 
+            /* Shadow lembut */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+            max-width: 600px;
+            width: 90%;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .moon-icon {
+            font-size: 4.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-yellow);
+            /* Efek glow kuning samar */
+            filter: drop-shadow(0 0 10px rgba(255, 193, 7, 0.4));
+        }
+
+        .title-ramadan {
+            color: var(--dark-gold); /* Menggunakan emas tua agar kontras di BG putih */
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .sub-text {
+            color: #6c757d; /* Abu-abu teks standar */
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        /* Tombol THR Simpel Putih Kuning */
+        .btn-thr {
+            background-color: var(--primary-yellow);
+            color: #000; /* Teks hitam agar jelas */
+            font-weight: 600;
+            padding: 12px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+            animation: pulse-yellow 2s infinite;
+        }
+
+        .btn-thr:hover {
+            background-color: #e0a800; /* Kuning sedikit gelap saat hover */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.5);
+            color: #000;
+        }
+
+        /* Styling Modal */
+        .modal-content {
+            background-color: #ffffff;
+            border-radius: 20px;
+            border: none;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            background-color: var(--primary-yellow);
+            color: #000;
+            border-bottom: none;
+            padding: 1.5rem;
+        }
+
+        .modal-title {
+            font-weight: 700;
+        }
+        
+        /* Mengubah warna tombol close modal */
+        .btn-close {
+            filter: none; /* Reset filter jika ada */
+        }
+
+        .modal-body {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .congrats-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .thr-amount {
+            font-size: 2.8rem;
+            color: #28a745; /* Hijau sukses tetap dipakai untuk uang */
+            font-weight: 700;
+            margin: 15px 0;
+            background: #e9f7ef;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .modal-footer {
+            border-top: none;
+            justify-content: center;
+            padding-bottom: 2rem;
+        }
+        
+        .btn-close-modal {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            padding: 8px 25px;
+        }
+        .btn-close-modal:hover {
+            background-color: #eee;
+        }
+
+        /* Animasi */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse-yellow {
+            0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 193, 7, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ramadan-container">
+        <div class="moon-icon">🌙</div>
+        <h1 class="title-ramadan">Marhaban Ya Ramadan</h1>
+        <p class="sub-text">Halaman simpel penyambut bulan suci. Semoga damai dan berkah menyertai kita semua.</p>
+        
+        <button type="button" class="btn btn-thr" data-bs-toggle="modal" data-bs-target="#thrModal" onclick="triggerConfetti()">
+            Cek Keberuntungan THR 🎁
+        </button>
+    </div>
+
+    <div class="modal fade" id="thrModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Selamat! ✨</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="congrats-text">Alhamdulillah, Anda mendapatkan THR</p>
+                    <div class="thr-amount">Rp 1.500.000,-</div>
+                    <p class="text-muted mt-3">Gunakan dengan bijak untuk keperluan Lebaran nanti ya.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-close-modal" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <script>
+        // Fungsi Confetti yang disesuaikan warnanya (Hanya Kuning, Emas, Putih)
+        function triggerConfetti() {
+            setTimeout(() => {
+                var duration = 2.5 * 1000;
+                var animationEnd = Date.now() + duration;
+                // Definisi warna: Kuning cerah, Emas tua, Putih
+                var colors = ['#ffc107', '#b59410', '#ffffff']; 
+
+                (function frame() {
+                    var timeLeft = animationEnd - Date.now();
+
+                    if (timeLeft <= 0) {
+                        return;
+                    }
+
+                    // Menembak dari kiri
+                    confetti({
+                        particleCount: 3,
+                        angle: 60,
+                        spread: 55,
+                        origin: { x: 0 },
+                        colors: colors,
+                        zIndex: 1060 
+                    });
+                    
+                    // Menembak dari kanan
+                    confetti({
+                        particleCount: 3,
+                        angle: 120,
+                        spread: 55,
+                        origin: { x: 1 },
+                        colors: colors,
+                        zIndex: 1060
+                    });
+
+                    requestAnimationFrame(frame);
+                }());
+            }, 200); 
+        }
+    </script>
+</body>
+</html>
